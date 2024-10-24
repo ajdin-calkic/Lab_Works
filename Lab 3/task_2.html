@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CV Data Entry Form</h1>
+<form id="form">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName"><br>
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName"><br>
+  <label for="jobTitle">Job Title:</label>
+  <input type="text" id="jobTitle"><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById("form").addEventListener("submit", function(event){
+    event.preventDefault();
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const jobTitle = document.getElementById("jobTitle").value;
+    localStorage.setItem("firstName", firstName);
+    localStorage.setItem("lastName", lastName);
+    localStorage.setItem("jobTitle", jobTitle);
+  })
+</script>
+
+</body>
+</html>
